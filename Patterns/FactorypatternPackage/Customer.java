@@ -1,0 +1,6 @@
+package FactoryPatternPackage;
+
+class Customer
+{
+	
+}
