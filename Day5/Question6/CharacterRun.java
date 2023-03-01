@@ -6,19 +6,19 @@ import java.util.concurrent.Executors;
 public class CharacterRun{
 	public static void main(String[] args) throws Exception
 	{
-		Scanner sc = new Scanner(System.in);
-		CheckAlphaClass cac = new CheckAlphaClass();
-		ExecutorService es = Executors.newFixedThreadPool(1);
-		es.execute(()->
+		Scanner scanner = new Scanner(System.in);
+		CheckAlphaClass checkalphaclass = new CheckAlphaClass();
+		ExecutorService executorservice = Executors.newFixedThreadPool(1);
+		executorservice.execute(()->
 		{
 			while(true)
 			{
 				try {
-				cac.checkAlphaMethod();
+					checkalphaclass.checkAlphaMethod();
 				}
 				catch(Exception e)
 				{
-					
+					e.printStackTrace();
 				}
 			}
 		});
@@ -29,12 +29,11 @@ public class CharacterRun{
 class CheckAlphaClass
 {
 	static int i=0;
-	Scanner sc = new Scanner(System.in);
+	Scanner scanner  = new Scanner(System.in);
 	public void checkAlphaMethod() throws Exception
 	{
 		System.out.println("Enter an alphabet:");
-		String str=sc.next();
-		
+		String str=scanner.next();
 		try 
 		{
 			checkChar(str);
@@ -48,13 +47,8 @@ class CheckAlphaClass
 		catch(NotAnAlphaException e)
 		{
 			System.out.println("Please enter an alphabet...");
-		}
-		
-		
-		
-		
-		
-	}
+		}		
+   }
 	public void checkChar(String str) throws Exception
 	{
 		char c=str.charAt(0);
@@ -65,10 +59,7 @@ class CheckAlphaClass
 		else if(isNotAlpha(c))
 		{
 			throw new NotAnAlphaException("Not an alphabet exception caught...");
-		}
-
-			
-		
+		}		
 	}
 	public boolean isNotAlpha(char c)
 	{
@@ -82,29 +73,6 @@ class CheckAlphaClass
 		}
 	}
 }
-class MyException extends Exception
-{
-	
-}
-class NotACharException extends MyException
-{
-	String msg;
-	public NotACharException(String msg)
-	{
-		this.msg=msg;
-	}
-	public String toString() {
-		return msg;
-	}
-}
-class NotAnAlphaException extends MyException
-{
-	String msg;
-	public NotAnAlphaException(String msg)
-	{
-		this.msg=msg;
-	}
-	public String toString() {
-		return msg;
-	}
-}
+
+
+
