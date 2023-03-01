@@ -8,20 +8,21 @@ public class CountingThread{
 	static int i = 1;
 
 	public static void main(String[] args) {
-		CountingThread d = new CountingThread();
-		ExecutorService es = Executors.newFixedThreadPool(1);
-		es.execute(() -> {
+		CountingThread countingthread = new CountingThread();
+		ExecutorService executorservice = Executors.newFixedThreadPool(1);
+		executorservice.execute(() -> {
 			for (int i = 1; i <= 100; i++) {
-				d.countNum();
+				countingthread.countNum();
 			}
 		});
 	}
 
 	synchronized public void countNum() {
-		Thread t = Thread.currentThread();
+		Thread thread = Thread.currentThread();
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
+			e.printStackTrace();
 
 		}
 		System.out.println(i);
@@ -30,6 +31,7 @@ public class CountingThread{
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			System.out.println("Message");
 
