@@ -5,17 +5,13 @@ import java.util.concurrent.Executors;
 
 public class ThreadStartWithExecutor {
 	public static void main(String[] args) {
-		ExecutorService es = Executors.newFixedThreadPool(1);
-		es.execute(() ->
-
+		ExecutorService executorservice = Executors.newFixedThreadPool(1);
+		executorservice.execute(() ->
 		{
-
 			System.out.println("Called once");
 		});
-		es.execute(() ->
-
+		executorservice.execute(() ->
 		{
-
 			System.out.println("Called twice");
 		});
 
