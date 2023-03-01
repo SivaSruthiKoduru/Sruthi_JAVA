@@ -5,47 +5,26 @@ import java.util.concurrent.Executors;
 
 public class FormatMessage {
 	public static void main(String[] args) {
-		work w = new work();
-		ExecutorService es = Executors.newFixedThreadPool(3);
-		es.execute(()->
+		DisplayMessage displaymessage= new DisplayMessage();
+		ExecutorService executorservice = Executors.newFixedThreadPool(3);
+		executorservice.execute(()->
 		{
-			synchronized(w) {
-			w.display("1st message");
+			synchronized(displaymessage) {
+				displaymessage.display("1st message");
+				
+			}
+			synchronized(displaymessage) {
+				displaymessage.display("2nd message");
+			}
+			synchronized(displaymessage) {
+				displaymessage.display("3rd message");
 			}
 			
+			
 		});
-		es.execute(()->
-		{
-			synchronized(w) {
-			w.display("2nd message");
-			}
-		});
-		es.execute(()->
-		{
-			synchronized(w) {
-			w.display("3rd message");
-			}
-		});
-		es.shutdown();
+		
+		executorservice.shutdown();
 		
 	}
 
-}
-class work
-{
-	
-
-	public void display(String msg)
-	{
-		System.out.print("\"[------"+msg+"------]\"\n");
-		try 
-		{
-			Thread.sleep(10);
-		}
-		catch(Exception e)
-		{
-			
-		}
-	}
-	
 }
