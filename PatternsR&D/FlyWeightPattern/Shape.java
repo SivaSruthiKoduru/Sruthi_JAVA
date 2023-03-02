@@ -1,5 +1,7 @@
 package FlyWeightPattern;
 
-public interface Shape {
-
+interface Shape
+{
+	void draw();
+	
 }
