@@ -1,6 +1,17 @@
 package MementoPattern;
+/**
+ * This is the MementoPatternDemo class
+ * This clas hass the main method
+ * @author sivasruthikoduru
+ *
+ */
 
 public class MementoPatternDemo {
+	/**
+	 * This is the main class 
+	 * @param args
+	 * @return Nothing
+	 */
 	public static void main(String[] args) {
 		Originator originator= new Originator();
 		CareTaker caretaker=new CareTaker();
