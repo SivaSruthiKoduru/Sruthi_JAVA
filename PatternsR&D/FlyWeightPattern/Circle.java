@@ -1,32 +1,64 @@
 package FlyWeightPattern;
-
-class Circle implements Shape
+/**
+ * This is class Circle
+ * It has methods setXCoordinate,setYCoordinate,setRadius,draw
+ * It also has a constructor
+ * @author sivasruthikoduru 
+ * 
+ *
+ */
+class Circle
 {
-private int x;
-private int y;
+private int xCoordinate;
+private int yCoordinate;
 private String colour;
 private int radius;
+/**
+ * This is Circle constructor
+ * @param colour
+ * @return Nothing
+ */
 public Circle(String colour)
 {
 	this.colour=colour;
 	
 }
-public void setX(int x)
+/**
+ * This is setXCoordinate method that assigns x value.
+ * @param xCoordinate
+ * @return nothing
+ */
+public void setXCoordinate(int xCoordinate)
 {
-	this.x=x;
+	this.xCoordinate=xCoordinate;
 	
 }
-public void setY(int y)
+/**
+ * This is setYCoordinate method that assigns y value.
+ * @param yCoordinate
+ * @return nothing
+ */
+public void setYCoordinate(int yCoordinate)
 {
-	this.y=y;
+	this.yCoordinate=yCoordinate;
 }
+/**
+ * This is setRadius method that assigns radius value.
+ * @param radius
+ * @return nothing
+ */
 public void setRadius(int radius)
 {
 	this.radius=radius;
 }
+/**
+ * This is draw method
+ * @param Nothing
+ * @return Nothing
+ */
 public void draw()
 {
-	System.out.println("Drawing circle with\ncolour:"+colour+"\nx:"+x+"\ny:"+y+"\nRadius:"+radius+"\n\n\n");
+	System.out.println("Drawing circle with\ncolour:"+colour+"\nx:"+xCoordinate+"\ny:"+yCoordinate+"\nRadius:"+radius+"\n\n\n");
 }
 	
 }
