@@ -9,7 +9,6 @@ public class WriteDateToFile {
 	public static void main(String[] args) {
 		Date date= new Date();
 		String dateString=date.toString();
-		
 		try(FileWriter fileWriter=new FileWriter("dateWrite.txt");)
 	    {
 			fileWriter.write(dateString);
@@ -19,8 +18,7 @@ public class WriteDateToFile {
 		{
 			System.out.println("Writing date object failed..1");
 		}
-		try(FileReader fileReader=new FileReader("dateWrite.txt");
-				BufferedReader bufferedReader=new BufferedReader(fileReader);)
+		try(FileReader fileReader=new FileReader("dateWrite.txt");BufferedReader bufferedReader=new BufferedReader(fileReader);)
 		{
 			System.out.println(bufferedReader.readLine());
 		}
