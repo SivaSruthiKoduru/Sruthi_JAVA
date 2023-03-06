@@ -1,7 +1,6 @@
 package Question10;
 import java.util.Scanner;
 import java.io.File;
-
 public class RenameFile {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -17,10 +16,7 @@ public class RenameFile {
 		{
 			System.out.println("Renaming failed..........!!");
 			System.out.println("Enter an existing file name");
-		}
-		
-		
-		
+		}	
 	}
 
 }
